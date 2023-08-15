@@ -1,0 +1,54 @@
+<div>
+    <button mat-flat-button (click)="back()">
+        <mat-icon>keyboard_backspace</mat-icon>
+        Back
+    </button>
+
+    <p class="register-lbl">Register Account</p>
+    
+    <div class="register-account-form-div">
+        <mat-stepper class="stepper" [orientation]="(stepperOrientation | async)!">
+            <mat-step [stepControl]="firstFormGroup" label="Provide Basic Information" [completed]="firstFormGroup.valid">
+                <form [formGroup]="firstFormGroup" class="form_fix_vert">
+                    <mat-form-field appearance="fill">
+                        <mat-label>First Name</mat-label>
+                        <input matInput placeholder="First name" formControlName="FN_Ctrl" required>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput placeholder="Last name" formControlName="LN_Ctrl" required>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Date of Birth</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="DoB_Ctrl" required>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <div>
+                        <button mat-raised-button matStepperNext color="primary" [disabled]="!firstFormGroup.valid">Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup" label="Set Credentials" [completed]="secondFormGroup.valid">
+                <form [formGroup]="secondFormGroup" class="form_fix_vert">
+                    <span>Email is automatically Generated but can be changed</span>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="Email_Ctrl" placeholder="Email" required>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Password</mat-label>
+                        <input matInput formControlName="Passwd_Ctrl" placeholder="Password" required>
+                    </mat-form-field>
+                    <div>
+                        <button mat-raised-button matStepperPrevious style="margin-right: 15px;">Back</button>
+                        <button mat-raised-button matStepperNext color="primary" [disabled]="!firstFormGroup.valid || !secondFormGroup.valid" (click)="register()">Submit</button>
+                    </div>
+                </form>
+            </mat-step>
+        </mat-stepper>
+    </div>
+</div>
+
+<!-- Import MaterializeJS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" async></script>

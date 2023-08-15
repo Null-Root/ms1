@@ -1,0 +1,71 @@
+::ng-deep .mat-horizontal-stepper-header{
+    pointer-events: none !important;
+}
+
+// Main
+:host {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+    align-items: center;
+    justify-content: center;
+
+    & > div {
+        outline: 1px dotted #1c1c1c;
+        padding: 4em;
+
+        @media (max-width: 768px) {
+            outline: none;
+            padding: 0;
+        }
+    }
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+.register-lbl {
+    font-size: 2em;
+    padding: 10px;
+}
+
+
+// Stepper
+.register-account-form-div {
+    overflow: auto;
+    margin-top: 2.25em;
+
+    @media (max-width: 768px) {
+        margin-top: 0;
+	}
+}
+
+.stepper {
+    margin-top: 8px;
+}
+
+.mat-mdc-form-field {
+    margin-top: 16px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+
+    & > mat-form-field {
+        display: inline-block;
+    }
+}
+
+
+.form_fix_vert {
+    display: flex;
+    flex-direction: column;
+    margin: 1.25em 0;
+
+    & > mat-form-field {
+        margin: 0;
+    }
+}

@@ -1,0 +1,27 @@
+:host {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+.brand-logo {
+	margin-left: 1em;
+
+	@media (max-width: 768px) {
+		margin: 0;
+	}
+}
+
+#nav-mobile {
+	margin-right: 3em;
+}

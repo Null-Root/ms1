@@ -1,0 +1,42 @@
+:host {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+    align-items: center;
+    justify-content: center;
+
+    & > div {
+        outline: 1px dotted #1c1c1c;
+        padding: 4em;
+
+        @media (max-width: 768px) {
+            outline: none;
+            padding: 0;
+        }
+    }
+}
+
+.login-lbl {
+    font-size: 2em;
+    padding: 10px;
+}
+
+.login-account-form-div {
+    overflow: auto;
+    margin-top: 2.25em;
+}
+
+.form_fix_vert {
+    display: flex;
+    flex-direction: column;
+    margin: 1.25em 0;
+
+    & > mat-form-field {
+        margin: 0;
+    }
+}
+
+mat-form-field {
+    width: 20rem;
+}

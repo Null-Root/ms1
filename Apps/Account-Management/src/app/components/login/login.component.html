@@ -1,0 +1,27 @@
+<div>
+    <button mat-flat-button (click)="back()">
+        <mat-icon>keyboard_backspace</mat-icon>
+        Back
+    </button>
+
+    <p class="login-lbl">Login Account</p>
+
+    <div class="login-account-form-div">      
+        <form [formGroup]="loginFormGroup" class="form_fix_vert">
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="Email_Ctrl" placeholder="Email" required>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="Passwd_Ctrl" placeholder="Password" required>
+            </mat-form-field>
+            <div>
+                <button mat-raised-button color="primary" [disabled]="!loginFormGroup.valid" (click)="login()">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Import MaterializeJS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" async></script>
