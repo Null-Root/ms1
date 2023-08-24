@@ -1,5 +1,6 @@
 package com.ms1.notificationservice.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,6 +25,7 @@ public class NotificationService {
         if (!docExists) {
             User userDoc = new User();
             userDoc.setUserId(userId);
+            userDoc.setNotifications(new ArrayList<>());
             notificationRepository.insert(userDoc);
         }
 
@@ -35,12 +37,12 @@ public class NotificationService {
         notificationRepository.save(userDoc);
     }
 
-    public List<Notification> getUserNotifications(String serviceId, String userId) {
+    public List<Notification> getUserNotifications(String appId, String userId) {
         // Check and Get User Document
         User userDoc = notificationRepository.findByUserId(userId);
         List<Notification> filtered_notifications = userDoc.getNotifications()
                                                 .stream()
-                                                .filter(notification -> notification.getServiceId().equals(serviceId))
+                                                .filter(notification -> notification.getAppId().equals(appId))
                                                 .collect(Collectors.toList());
 
         // Remove Notifications

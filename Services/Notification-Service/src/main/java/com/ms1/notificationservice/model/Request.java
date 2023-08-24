@@ -2,7 +2,7 @@ package com.ms1.notificationservice.model;
 
 public class Request {
     private String destUserId;
-    private String serviceId;
+    private String appId;
     private String title;
     private String content;
 
@@ -10,8 +10,8 @@ public class Request {
     public String getDestUserId() {
         return destUserId;
     }
-    public String getServiceId() {
-        return serviceId;
+    public String getAppId() {
+        return appId;
     }
     public String getTitle() {
         return title;

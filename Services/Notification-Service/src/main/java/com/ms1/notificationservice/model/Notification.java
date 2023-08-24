@@ -2,9 +2,14 @@ package com.ms1.notificationservice.model;
 
 public class Notification {
 
+    // Notification Title
     private String title;
+
+    // Notification Content
     private String content;
-    private String serviceId;
+    
+    // App ID that will consume the notification
+    private String appId;
 
     public Notification() {}
 
@@ -24,13 +29,11 @@ public class Notification {
         this.content = content;
     }
 
-    public String getServiceId() {
-        return serviceId;
+    public String getAppId() {
+        return appId;
     }
 
-    public void setServiceId(String serviceId) {
-        this.serviceId = serviceId;
+    public void setAppId(String appId) {
+        this.appId = appId;
     }
-
-    
 }
